@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diploma Registry</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register-section">
+            <h2>Register Diploma</h2>
+            <form id="registerForm">
+                <input type="text" id="studentName" placeholder="Student Name" required>
+                <input type="text" id="course" placeholder="Course" required>
+                <input type="text" id="institution" placeholder="Institution" required>
+                <input type="date" id="date" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div class="view-section">
+            <h2>View Diploma</h2>
+            <input type="number" id="diplomaId" placeholder="Diploma ID" required>
+            <button id="viewButton">View</button>
+            <div id="diplomaDetails"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
