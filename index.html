@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ValAdemic</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@truffle/contract/dist/truffle-contract.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <h1>ValAdemic</h1>
+
+  <h2>Consultar Diploma</h2>
+  <input type="text" id="consultaHash" placeholder="Hash do Diploma">
+  <button onclick="consultarDiploma()">Consultar</button>
+  <p id="consultaResultado"></p>
+
+  <h2>Cadastrar Diploma</h2>
+  <input type="text" id="chaveConta" placeholder="Chave da Conta">
+  <button onclick="autorizarCadastro()">Autorizar Cadastro</button>
+
+  <div id="cadastroForm" style="display:none;">
+    <input type="text" id="studentName" placeholder="Nome do Estudante">
+    <input type="text" id="studentId" placeholder="ID do Estudante">
+    <input type="text" id="institution" placeholder="Instituição">
+    <input type="date" id="date">
+    <button onclick="cadastrarDiploma()">Cadastrar Diploma</button>
+  </div>
+
+  <p id="cadastroResultado"></p>
+</body>
+</html>
