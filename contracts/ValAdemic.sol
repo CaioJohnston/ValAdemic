@@ -11,7 +11,7 @@ contract ValAdemic {
     }
 
     mapping(bytes32 => Diploma) private diplomas;
-    mapping(string => bool) private studentIds; // Para verificar a existencia de um diploma por matricula
+    mapping(string => mapping(string => bool)) private studentInstitutionIds; // Verificar a existencia de um diploma por matricula e instituicao
 
     event DiplomaRegistered(bytes32 hash, string studentName, string institution, uint date, string studentId);
 
@@ -20,11 +20,11 @@ contract ValAdemic {
     }
 
     function registerDiploma(string memory studentName, string memory studentId, string memory institution, uint date) public returns (string memory, bytes32) {
-        require(!studentIds[studentId], "Diploma ja existe para este ID de estudante.");
+        require(!studentInstitutionIds[studentId][institution], "Diploma ja existe para este ID de estudante nesta instituicao.");
 
         bytes32 diplomaHash = generateDiplomaHash(studentName, studentId, institution, date);
         diplomas[diplomaHash] = Diploma(studentName, studentId, institution, date, diplomaHash);
-        studentIds[studentId] = true;
+        studentInstitutionIds[studentId][institution] = true;
         emit DiplomaRegistered(diplomaHash, studentName, institution, date, studentId);
         return ("Diploma registrado com sucesso.", diplomaHash);
     }

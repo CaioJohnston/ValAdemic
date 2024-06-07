@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>ValAdemic</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@truffle/contract/dist/truffle-contract.min.js"></script>
   <script src="app.js"></script>
@@ -15,7 +16,7 @@
   <p id="consultaResultado"></p>
 
   <h2>Cadastrar Diploma</h2>
-  <input type="text" id="chaveConta" placeholder="Chave da Conta">
+  <input type="password" id="chaveConta" placeholder="Chave Privada da Conta">
   <button onclick="autorizarCadastro()">Autorizar Cadastro</button>
 
   <div id="cadastroForm" style="display:none;">

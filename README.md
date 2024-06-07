@@ -1,3 +1,4 @@
+
 # ValAdemic
 
 ValAdemic é uma solução baseada em blockchain para o cadastro e consulta de diplomas acadêmicos. Utiliza Solidity para contratos inteligentes, Truffle para desenvolvimento e implantação, Ganache como blockchain local para testes e Metamask para interação com a blockchain.
