@@ -10,6 +10,7 @@ ValAdemic é uma solução baseada em blockchain para o cadastro e consulta de d
 - [Truffle](https://www.trufflesuite.com/truffle)
 - [Ganache CLI](https://www.trufflesuite.com/ganache)
 - [Metamask](https://metamask.io/)
+- [MongoDB](https://cloud.mongodb.com/)
 
 ## Instalação
 
@@ -30,7 +31,7 @@ npm install -g truffle ganache-cli
 Clone este repositório para sua máquina local:
 
 ```bash
-git clone https://github.com/seuusuario/ValAdemic.git
+git clone https://github.com/CaioJohnston/ValAdemic.git
 cd ValAdemic
 ```
 
@@ -61,7 +62,15 @@ truffle compile
 truffle migrate --reset
 ```
 
-### Passo 3: Servir a Aplicação
+### Passo 3: Conectar com o Banco de Dados
+
+Inicializar a conexão com o MongoDB:
+
+```bash
+node .\server.js
+```
+
+### Passo 4: Servir a Aplicação
 
 Use `http-server` para servir a aplicação:
 
@@ -83,7 +92,7 @@ Use `http-server` para servir a aplicação:
    http://127.0.0.1:8080
    ```
 
-### Passo 4: Configurar Metamask
+### Passo 5: Configurar Metamask
 
 1. **Adicionar Rede Personalizada no Metamask**:
    - Nome da Rede: Ganache
@@ -107,10 +116,11 @@ Use `http-server` para servir a aplicação:
 ### Cadastro de Diploma
 
 1. Insira a chave da conta no campo de autorização.
-2. Clique em "Autorizar Cadastro".
-3. Preencha os detalhes do diploma (nome do estudante, ID do estudante, instituição e data).
-4. Clique em "Cadastrar Diploma".
-5. Veja o hash do diploma registrado.
+2. Confirme a autenticação via assinatura do Metamask
+3. Clique em "Autorizar Cadastro".
+4. Preencha os detalhes do diploma (nome do estudante, ID do estudante, instituição e data).
+5. Clique em "Cadastrar Diploma".
+6. Veja o hash do diploma registrado.
 
 ## Estrutura do Projeto
 
@@ -120,6 +130,7 @@ Use `http-server` para servir a aplicação:
 - `index.html`: Interface do usuário para interação com o contrato.
 - `app.js`: Script JavaScript para conectar a interface do usuário com a blockchain.
 - `truffle-config.js`: Configuração do Truffle.
+- `server.js`: Interação com o banco de dados.
 
 ## Licença
 
